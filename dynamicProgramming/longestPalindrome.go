@@ -1,6 +1,6 @@
 package dynamicProgramming
 
-func bruteLongestPalindrome(s string) string {
+func BruteLongestPalindrome(s string) string {
 	var longest int = 0
 	var longestString string = ""
 
@@ -21,7 +21,7 @@ func bruteLongestPalindrome(s string) string {
 	return longestString
 }
 
-func longestPalindrome(s string) string {
+func LongestPalindrome(s string) string {
 	var result string
 	var temp string
 
