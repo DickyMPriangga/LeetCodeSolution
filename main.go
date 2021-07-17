@@ -4,15 +4,12 @@ import (
 	"fmt"
 	"sort"
 	"strings"
+
+	dp "github.com/DickyMPriangga/LeetCodeSolution/dynamicProgramming"
 )
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func main() {
-	fmt.Println(dp.longestPalindrome("babad"))
+	fmt.Println(dp.LongestPalindrome("babad"))
 }
 
 func maxArea(height []int) int {
@@ -147,79 +144,6 @@ func lengthOfLongestSubstring(s string) int {
 
 		if len(resultString) > result {
 			result = len(resultString)
-		}
-	}
-
-	return result
-}
-
-func mainAddTwoNumbers() {
-	var l1 = ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3, Next: nil}}}
-	var l2 = ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4, Next: nil}}}
-
-	addTwoNumbers(&l1, &l2)
-}
-
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	var result ListNode
-	var p1, p2, pr *ListNode
-	var remainder = 0
-
-	p1 = l1
-	p2 = l2
-	pr = &result
-
-	for {
-		if p1 == nil {
-			pr.Val = p2.Val + remainder
-			p2 = p2.Next
-		} else if p2 == nil {
-			pr.Val = p1.Val + remainder
-			p1 = p1.Next
-		} else {
-			pr.Val = p1.Val + p2.Val + remainder
-			p1 = p1.Next
-			p2 = p2.Next
-		}
-
-		if pr.Val >= 10 {
-			remainder = 1
-			pr.Val = pr.Val % 10
-		} else {
-			remainder = 0
-		}
-
-		if p1 == nil && p2 == nil {
-			if remainder == 1 {
-				pr.Next = &ListNode{Val: 1, Next: nil}
-			}
-			break
-		} else {
-			pr.Next = &ListNode{}
-			pr = pr.Next
-		}
-	}
-
-	return &result
-}
-
-func mainTwoSum() {
-	var test = []int{2, 7, 11, 15}
-	var testTarget = 9
-
-	fmt.Print(twoSum(test, testTarget))
-}
-
-func twoSum(nums []int, target int) []int {
-	var result = make([]int, 2)
-
-	for i := 0; i < len(nums); i++ {
-		for j := i + 1; j < len(nums); j++ {
-			if nums[j]+nums[i] == target {
-				result[0] = i
-				result[1] = j
-				return result
-			}
 		}
 	}
 
