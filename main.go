@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	dp "github.com/DickyMPriangga/LeetCodeSolution/dynamicProgramming"
+	ts "github.com/DickyMPriangga/LeetCodeSolution/array/threeSum"
 )
 
 func main() {
-	fmt.Println(dp.LongestPalindrome("babad"))
+	fmt.Println(ts.ThreeSum([]int{0, 0, 0, 0}))
 }
