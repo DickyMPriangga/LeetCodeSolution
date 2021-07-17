@@ -1,5 +1,8 @@
 package dynamicProgramming
 
+///LeetCode Problems : Longest Palindromic Substring
+///Link : https://leetcode.com/problems/longest-palindromic-substring/
+
 func BruteLongestPalindrome(s string) string {
 	var longest int = 0
 	var longestString string = ""
@@ -40,7 +43,7 @@ func LongestPalindrome(s string) string {
 }
 
 func checkPalindrome(s string, l int, r int) string {
-	if l < r || s == "" {
+	if l > r || s == "" {
 		return ""
 	}
 
@@ -51,7 +54,7 @@ func checkPalindrome(s string, l int, r int) string {
 			break
 		}
 
-		result = s[l:r]
+		result = s[l : r+1]
 		l--
 		r++
 	}

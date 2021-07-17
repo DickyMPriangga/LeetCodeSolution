@@ -1,5 +1,8 @@
 package array
 
+///LeetCode Problems : Two Sum
+///Link : https://leetcode.com/problems/two-sum/
+
 func TwoSum(nums []int, target int) []int {
 	var result = make([]int, 2)
 
