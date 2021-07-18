@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	ts "github.com/DickyMPriangga/LeetCodeSolution/array/threeSum"
+	lc "github.com/DickyMPriangga/LeetCodeSolution/string/letterCombination"
 )
 
 func main() {
-	fmt.Println(ts.ThreeSum([]int{0, 0, 0, 0}))
+	fmt.Println(lc.LetterCombinations("2"))
 }
