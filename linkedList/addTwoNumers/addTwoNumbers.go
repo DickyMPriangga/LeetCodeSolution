@@ -1,43 +1,13 @@
 package linkedList
 
+import lList "github.com/DickyMPriangga/LeetCodeSolution/linkedList/utilities"
+
 ///LeetCode Problems : Add Two Numbers
 ///Link : https://leetcode.com/problems/add-two-numbers/
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func ListFromArray(arr []int) ListNode {
-	list := new(ListNode)
-	listPtr := list
-	for i := 0; i < len(arr); i++ {
-		listPtr.Val = arr[i]
-		if i != len(arr)-1 {
-			listPtr.Next = &ListNode{}
-			listPtr = listPtr.Next
-		}
-	}
-	return *list
-}
-
-func (l *ListNode) ListToArray() []int {
-	var result []int
-	var listPtr *ListNode = l
-	for {
-		if listPtr == nil {
-			break
-		}
-		result = append(result, l.Val)
-		listPtr = listPtr.Next
-	}
-
-	return result
-}
-
-func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	var result ListNode
-	var p1, p2, pr *ListNode
+func AddTwoNumbers(l1 *lList.ListNode, l2 *lList.ListNode) *lList.ListNode {
+	var result lList.ListNode
+	var p1, p2, pr *lList.ListNode
 	var remainder = 0
 
 	p1 = l1
@@ -66,11 +36,11 @@ func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 		if p1 == nil && p2 == nil {
 			if remainder == 1 {
-				pr.Next = &ListNode{Val: 1, Next: nil}
+				pr.Next = &lList.ListNode{Val: 1, Next: nil}
 			}
 			break
 		} else {
-			pr.Next = &ListNode{}
+			pr.Next = &lList.ListNode{}
 			pr = pr.Next
 		}
 	}
