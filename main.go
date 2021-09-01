@@ -1,15 +1,13 @@
 package main
 
 import (
-	"fmt"
-
-	api "github.com/DickyMPriangga/LeetCodeSolution/array/seachRotatedSortArray"
+	api "github.com/DickyMPriangga/LeetCodeSolution/array/combinationSum"
 	//lList "github.com/DickyMPriangga/LeetCodeSolution/linkedList/utilities"
 )
 
 func main() {
-	nums := []int{1, 3, 5}
-	target := 1
+	candidates := []int{2, 3, 5}
+	target := 8
 
-	fmt.Println(api.SearchRotatedSortArray(nums, target))
+	api.CombinationSum(candidates, target)
 }
